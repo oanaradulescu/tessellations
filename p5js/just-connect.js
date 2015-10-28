@@ -1,20 +1,20 @@
 
-// 
-// LEARN 
+//
+// LEARN
 // -- nested matrices? push() - push() - pop() - pop()
-// 
+//
 
 
 function setup() {
 	createCanvas(windowWidth, 2 * windowHeight);
 }
 
-	var 
+	var
 		hGap = 0,
 		vGap = 0,
 		roundedCornerDf = 10,
-		roundedCornerDf2 = 3,		
-		roundedCornerMax = 100,		
+		roundedCornerDf2 = 3,
+		roundedCornerMax = 100,
 
 		xLeft = 50, yTop = 150,
 		jHeight1 = 240,
@@ -28,7 +28,7 @@ function setup() {
 		jDotHeight = 90,
 
 		letterWidth = 260,
-		
+
 		uStrokeWidth = (letterWidth - hGap) / 2,
 		gutter = 2.75 * hGap,
 		uX= xLeft + letterWidth + gutter,
@@ -49,14 +49,14 @@ function grid(lineHeight2) {
 	strokeWeight(1);
 
 	// J
- 	line(xLeft, 0, xLeft, windowHeight);	
+ 	line(xLeft, 0, xLeft, windowHeight);
  	line(xLeft + letterWidth / 3, 0, xLeft + letterWidth / 3, windowHeight);
 	line(xLeft + letterWidth, 0, xLeft + letterWidth, windowHeight);
 
 	line(0, yTop, windowWidth, yTop);
-	line(0, yTop + jHeight1 + vGap, windowWidth, yTop + jHeight1 + vGap);	
+	line(0, yTop + jHeight1 + vGap, windowWidth, yTop + jHeight1 + vGap);
 	line(0, jDescenderY, windowWidth, jDescenderY);
-	line(0, yTop + lineHeight, windowWidth, yTop + lineHeight);	
+	line(0, yTop + lineHeight, windowWidth, yTop + lineHeight);
 
 	// U
 	line(uX, 0, uX, windowHeight);
@@ -78,7 +78,7 @@ function grid(lineHeight2) {
 	}
 
 	line(0, windowHeight + yTop, windowWidth, windowHeight + yTop);
-	line(0, windowHeight + yTop + (2/3) * lineHeight, windowWidth, windowHeight + yTop + (2/3) * lineHeight);	
+	line(0, windowHeight + yTop + (2/3) * lineHeight, windowWidth, windowHeight + yTop + (2/3) * lineHeight);
 	line(0, windowHeight + yTop + (1/3) * lineHeight2, windowWidth, windowHeight + yTop + (1/3) * lineHeight2);
 
 	var miniGridHeight = (2/3) * lineHeight2;
@@ -92,7 +92,7 @@ function grid(lineHeight2) {
 }
 
 function drawJ() {
-		
+
 	// J
 	stroke('darkviolet');
 	fill('orange');
@@ -102,11 +102,11 @@ function drawJ() {
 // 	ellipse(0, 0, jDotHeight, jDotHeight);
 // 	pop();
 
-	
+
 	push();
 	translate(xLeft, yTop);
 //  	rect(0, 0, letterWidth/2, jHeight1, roundedCornerDf, roundedCornerMax, roundedCornerDf, roundedCornerDf);
- 	rect(letterWidth/3, 0, 2 * letterWidth / 3, jHeight1, roundedCornerMax, roundedCornerDf, roundedCornerDf, roundedCornerDf); 	
+ 	rect(letterWidth/3, 0, 2 * letterWidth / 3, jHeight1, roundedCornerMax, roundedCornerDf, roundedCornerDf, roundedCornerDf);
  	rect(letterWidth/3, jHeight1 + vGap, 2 * letterWidth / 3, jHeight2, roundedCornerDf, roundedCornerDf, roundedCornerMax, roundedCornerDf);
  	pop();
 
@@ -120,7 +120,7 @@ function drawJ() {
 }
 
 function drawU() {
-	
+
 	stroke('darkviolet');
 	fill('orange');
 
@@ -167,7 +167,7 @@ function drawT() {
 	pop();
 
 	push();
-	translate(xLeft + 3 * letterWidth + (1/6) * letterWidth, yTop + (1/3) * lineHeight);	
+	translate(xLeft + 3 * letterWidth + (1/6) * letterWidth, yTop + (1/3) * lineHeight);
 	rect(0, 0, (2/3) * letterWidth, (2/3) * lineHeight, roundedCornerDf, roundedCornerDf, roundedCornerDf, roundedCornerDf);
 	pop();
 
@@ -225,14 +225,14 @@ function drawC(letterWidth, lineHeight, pos) {
 }
 
 function drawO (letterWidth, lineHeight) {
-	
+
 	stroke('darkviolet');
 	fill('orange');
 
 	push();
 	translate(letterWidth, windowHeight + yTop);
 	rect(0, 0, (1/2) * letterWidth, lineHeight, roundedCornerMax, roundedCornerDf2, roundedCornerDf2, roundedCornerMax);
-	rect((1/2) * letterWidth, 0, (1/2) * letterWidth, lineHeight, roundedCornerDf2, roundedCornerDf2, roundedCornerMax, roundedCornerDf2);	
+	rect((1/2) * letterWidth, 0, (1/2) * letterWidth, lineHeight, roundedCornerDf2, roundedCornerDf2, roundedCornerMax, roundedCornerDf2);
 	pop();
 
 }
@@ -252,7 +252,7 @@ function drawN (letterWidth, lineHeight, pos) {
 	rect(0, 0, (1/3) * letterWidth, lineHeight, roundedCornerMax, roundedCornerDf2);
 
 	pop();
-	
+
 }
 
 function drawE (letterWidth, lineHeight, pos) {
@@ -288,16 +288,16 @@ function draw() {
 
 	// J
 	drawJ();
-	
+
 	// U
 	drawU();
 
-	// S 
+	// S
 	drawS();
 
-	// T 
+	// T
 // 	drawT();
-	drawT2(letterWidth, lineHeight, xLeft, pos=4, windowNum=1);	
+	drawT2(letterWidth, lineHeight, xLeft, pos=4, windowNum=1);
 
 	var colWidth = windowWidth / numCols;
 	var magicNum = 3;
@@ -308,10 +308,10 @@ function draw() {
 	drawC(letterWidth2, lineHeight2, pos=1);
 
 	// O
-	drawO(letterWidth2, lineHeight2);	
+	drawO(letterWidth2, lineHeight2);
 
 	// N
-	drawN(letterWidth2, lineHeight2, pos=3);	
+	drawN(letterWidth2, lineHeight2, pos=3);
 
 	// N
 	drawN(letterWidth2, lineHeight2, pos=4);
@@ -329,4 +329,8 @@ function draw() {
 	// this is bc xLeft was already being used inside of drawT2
 	drawT2(letterWidth2, lineHeight2, 0, pos=7, windowNum=2);
 
+	stroke('darkviolet');
+	fill('red');
+	bezier(mouseX, mouseY, mouseX + 200, mouseY, mouseX + 200, mouseY + 100, mouseX, mouseY + 200);
+	bezier(mouseX, mouseY, mouseX - 100, mouseY - 100, mouseX - 100, mouseY + 100, mouseX, mouseY + 200);
 }
