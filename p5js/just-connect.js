@@ -1,7 +1,9 @@
 
 //
 // LEARN
-// -- nested matrices? push() - push() - pop() - pop()
+// -- nested matrices are not possible, correct? push() - push() - pop() - pop()
+// -- creating typeDrawer object to encapsulate variables => would a variable 
+// be able to reference another variable?
 //
 
 
