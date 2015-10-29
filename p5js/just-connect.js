@@ -329,8 +329,11 @@ function draw() {
 	// this is bc xLeft was already being used inside of drawT2
 	drawT2(letterWidth2, lineHeight2, 0, pos=7, windowNum=2);
 
-	stroke('red');
-	fill('red');
+	var alpha = map(mouseX, 0, windowWidth, 0, 255);
+	var heartCol = color(255, 0, 0, alpha);
+
+	stroke(heartCol);
+	fill(heartCol);
 	bezier(mouseX, mouseY, mouseX + 200, mouseY, mouseX + 200, mouseY + 100, mouseX, mouseY + 200);
 	bezier(mouseX, mouseY, mouseX - 100, mouseY - 100, mouseX - 100, mouseY + 100, mouseX, mouseY + 200);
 }
